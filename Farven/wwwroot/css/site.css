@@ -1,22 +1,114 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
 body {
-  margin-bottom: 60px;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-bottom: 60px;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #4d3c6e;
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group label {
+    color: #4d3c6e;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #4d3c6e;
+    border-color: #4d3c6e;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-primary:hover {
+        background-color: #3b2f57;
+        border-color: #3b2f57;
+    }
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.logo {
+    max-width: 150px;
+    margin: 20px 0;
+}
+
+.text-center {
+    color: #4d3c6e;
+}
+
+.navbar {
+    background-color: #4d3c6e;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: #258cfb;
+    }
+
+.nav-link-login {
+    color: #ffffff;
+    font-weight: bold;
+    border: 1px solid #ffffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .nav-link-login:hover {
+        background-color: #258cfb;
+        color: #ffffff;
+        border-color: #258cfb;
+    }
+
+.container {
+    margin-top: 20px;
+}
+
+.logo {
+    height: 35px;
+    margin-right: 10px;
 }

@@ -1,10 +1,10 @@
 ﻿@page
-@model Farven.Pages.LoginModel
+@model Farven.Pages.RegisterModel
 @{
-    ViewData["Title"] = "Tela de Login";
+    ViewData["Title"] = "Register";
 }
 
-<h2>Login</h2>
+<h2>Register</h2>
 
 <form method="post">
     <div class="form-group">
@@ -12,10 +12,14 @@
         <input type="text" id="username" name="Username" class="form-control" required />
     </div>
     <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" class="form-control" required />
+    </div>
+    <div class="form-group">
         <label for="password">Senha</label>
         <input type="password" id="password" name="Password" class="form-control" required />
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary">Register</button>
 
     @if (!string.IsNullOrEmpty(Model.ErrorMessage))
 
@@ -23,5 +27,3 @@
         <div class="alert alert-danger">@Model.ErrorMessage</div>
     }
 </form>
-
-<p>Não tem uma conta? <a href="/Register">Registre-se aqui</a>.</p>
