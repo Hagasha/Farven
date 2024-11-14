@@ -1,0 +1,9 @@
+﻿@page
+@model Farven.Pages.LogoutModel
+@{
+    Layout = null;
+    await Model.OnGetAsync();
+}
+<script>
+    window.location.href = '/';
+</script>

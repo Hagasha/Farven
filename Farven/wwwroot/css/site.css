@@ -1,3 +1,7 @@
+body, .navbar, .dropdown-menu, .dropdown-item {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -111,4 +115,199 @@ form {
 .logo {
     height: 35px;
     margin-right: 10px;
+}
+
+.nav-link-logout {
+    font-size: 1rem; /* Mesmo tamanho dos outros links */
+    color: #258cfb; /* Pode ajustar para manter as cores da sua marca */
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+    .nav-link-logout:hover {
+        color: #1a6db3;
+    }
+
+/* Tema Escuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar.dark-theme {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.footer.dark-theme {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.container.dark-theme {
+    background-color: #1e1e1e;
+}
+/* Ajuste de cores para links e botões no tema escuro */
+.nav-link, .btn-primary-darktheme {
+    color: #bb86fc;
+}
+
+.btn-primary.dark-theme {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+    color: #333;
+}
+
+/* Estilos para o Dropdown no tema claro */
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+.dropdown-item {
+    color: #333;
+}
+
+    .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #4d3c6e;
+    }
+
+/* Estilos para o Dropdown no tema escuro */
+body.dark-theme .dropdown-menu {
+    background-color: #333;
+    border-color: rgba(255,255,255,.15);
+}
+
+body.dark-theme .dropdown-item {
+    color: #e0e0e0;
+}
+
+    body.dark-theme .dropdown-item:hover {
+        background-color: #444;
+        color: #bb86fc;
+    }
+
+body.dark-theme .dropdown-divider {
+    border-top-color: rgba(255,255,255,.15);
+}
+
+/* Ajuste para o texto "Olá, [nome]" no tema escuro */
+body.dark-theme .nav-link.dropdown-toggle {
+    color: #e0e0e0;
+}
+
+    body.dark-theme .nav-link.dropdown-toggle:hover {
+        color: #bb86fc;
+    }
+/* Ajuste para o botão de logout no dropdown */
+body.dark-theme .dropdown-item[type="submit"] {
+    color: #e0e0e0;
+}
+
+    body.dark-theme .dropdown-item[type="submit"]:hover {
+        background-color: #444;
+        color: #bb86fc;
+    }
+/* Estilo para o botão de tema */
+.btn-theme {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    padding: 0.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .btn-theme:hover {
+        color: #258cfb;
+    }
+
+body.dark-theme .btn-theme {
+    color: #bb86fc;
+}
+
+/* Ajuste do espaçamento entre os itens da navbar */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+/* Se necessário, ajuste o tamanho do ícone */
+.btn-theme i {
+    font-size: 1.2rem;
+}
+
+/* Estilos do form no tema claro */
+form {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #4d3c6e;
+    }
+
+.register-link {
+    margin: 0;
+    color: #4d3c6e;
+}
+
+    .register-link a {
+        color: #258cfb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+/* Estilos para o tema escuro */
+body.dark-theme form {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark-theme .form-control {
+    background-color: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+    body.dark-theme .form-control:focus {
+        background-color: #404040;
+        border-color: #bb86fc;
+        color: #e0e0e0;
+    }
+
+body.dark-theme .register-link {
+    color: #e0e0e0;
+}
+
+    body.dark-theme .register-link a {
+        color: #bb86fc;
+    }
+
+body.dark-theme .btn-theme {
+    color: #bb86fc;
+}
+
+/* Ajuste o Register.cshtml para usar os mesmos estilos */
+.register-container {
+    max-width: 400px;
+    margin: 40px auto;
 }
