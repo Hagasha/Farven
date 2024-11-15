@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/Farven.styles.css" asp-append-version="true" />
     <link rel="icon" href="~/Images/Farven.ico" />
 </head>
-<body>
+<body class="d-flex flex-column">
     <header>
         <nav class="navbar navbar-expand-sm">
             <div class="container">
@@ -27,7 +27,7 @@
                             <a class="nav-link" asp-area="" asp-page="/Index">Página Inicial</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacidade</a>
+                            <a class="nav-link" asp-area="" asp-page="/History">Histórico de Cotações</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -39,11 +39,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
                                     <li><a class="dropdown-item" asp-page="/Profile">Perfil</a></li>
-                                    <li>
-                                        <form method="post" asp-page="/Logout" class="m-0">
-                                            <button type="submit" class="dropdown-item">Sair</button>
-                                        </form>
-                                    </li>
+                                    <li><a class="dropdown-item" asp-page="/Logout">Sair</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item">

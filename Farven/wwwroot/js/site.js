@@ -44,3 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
         updateThemeIcon(false);
     }
 });
+
+window.onscroll = function () {
+    let footer = document.querySelector('.footer');
+    let scrollPosition = window.innerHeight + window.scrollY;
+    let documentHeight = document.documentElement.offsetHeight;
+
+    // Verifica se a rolagem chegou ao fundo
+    if (scrollPosition >= documentHeight) {
+        footer.classList.add('visible'); // Adiciona a classe para tornar o footer visível
+    } else {
+        footer.classList.remove('visible'); // Remove a classe para esconder o footer
+    }
+};

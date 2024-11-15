@@ -141,7 +141,8 @@ body.dark-theme {
 
 .footer.dark-theme {
     background-color: #333;
-    color: #e0e0e0;
+    color: #bb86fc;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .container.dark-theme {
@@ -351,6 +352,7 @@ body.dark-theme .conversor-form {
             border-color: #bb86fc;
             color: #e0e0e0;
         }
+
 body.dark-theme .card-body {
     background-color: #2d2d2d;
     color: #e0e0e0;
@@ -359,5 +361,14 @@ body.dark-theme .card-body {
 body.dark-theme .card {
     background-color: #2d2d2d;
     color: #e0e0e0;
+}
+
+#historyResult {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
 }
 
