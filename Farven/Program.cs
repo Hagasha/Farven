@@ -3,6 +3,7 @@ using Farven.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Farven.Pages;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LogoutPath = "/Logout"; // Rota para logout
         options.AccessDeniedPath = "/AccessDenied"; // Opcional: página para acesso negado
     });
+
+// Adiciona o HttpClient ao contêiner de serviços
+builder.Services.AddHttpClient<ConversorModel>();
 
 var app = builder.Build();
 

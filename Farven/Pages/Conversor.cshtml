@@ -3,13 +3,41 @@
 @{
     ViewData["Title"] = "Conversor de Moedas";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Conversor de Moedas</h1>
-    <p class="lead">Converta facilmente diferentes moedas usando nosso conversor atualizado com taxas de câmbio em tempo real.</p>
-    <p>Escolha as moedas e insira o valor que deseja converter. Nosso sistema obtém as taxas de câmbio diretamente de uma API confiável para fornecer valores precisos e atualizados.</p>
-
-    <div class="mt-4">
-        <a class="btn btn-primary" asp-area="" asp-page="/Conversor">Começar a Conversão</a>
+<div class="container my-5">
+    <h1 class="text-center mb-4">Conversor de Moedas</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="amount">Valor:</label>
+                        <input type="number" class="form-control" id="amount" placeholder="Digite um valor" />
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="from">De:</label>
+                                <select class="form-control" id="from">
+                                    <option value="">Selecione uma moeda</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label for="to">Para:</label>
+                                <select class="form-control" id="to">
+                                    <option value="">Selecione uma moeda</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="convertCurrency()">Converter</button>
+                    <div id="result" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+@section Scripts {
+    <script src="~/js/conversor.js"></script>
+}

@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Farven.Pages
@@ -7,6 +6,7 @@ namespace Farven.Pages
     {
         public void OnGet()
         {
+            
         }
     }
 }
