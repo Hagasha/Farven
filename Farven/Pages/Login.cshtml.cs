@@ -26,7 +26,6 @@ namespace Farven.Pages
             _context = context;
             _authService = authService;
         }
-
         public async Task<IActionResult> OnPostAsync()
         {
             var user = _context.Clientes.SingleOrDefault(u => u.Username == Username);
@@ -40,7 +39,8 @@ namespace Farven.Pages
             // Definir o cookie de autenticação
             var claims = new List<Claim>
     {
-        new Claim(ClaimTypes.Name, user.Username)
+        new Claim(ClaimTypes.Name, user.Username),
+        new Claim("Id", user.Id.ToString()) // Adicionando o ID do cliente aos claims
     };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -51,6 +51,5 @@ namespace Farven.Pages
 
             return RedirectToPage("/Index");
         }
-
     }
 }

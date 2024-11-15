@@ -1,0 +1,27 @@
+﻿@page
+@model Farven.Pages.UserHistoryModel
+@{
+    ViewData["Title"] = "Histórico de Conversões";
+}
+
+<h2>Histórico de Conversões</h2>
+
+@if (Model.ConversionHistories != null && Model.ConversionHistories.Count > 0)
+{
+    <div>
+        @foreach (var history in Model.ConversionHistories)
+        {
+            <div>
+                <p>
+                    @history.Amount @history.FromCurrency
+                    = @history.ConvertedAmount @history.ToCurrency
+                    em @history.ConversionDate.ToString("dd/MM/yyyy HH:mm:ss")
+                </p>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>Nenhuma conversão registrada ainda.</p>
+}
