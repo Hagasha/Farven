@@ -6,4 +6,12 @@
 
 <h2>Perfil do Usuário</h2>
 <p>Nome de usuário: @User.Identity.Name</p>
-<p>Aqui você pode adicionar outras informações de perfil.</p>
+<p>Email: @Model.Email</p>
+
+<div>
+    <label>Senha:</label>
+    <input type="password" value="******" class="form-control" disabled />
+</div>
+
+
+<a asp-page="/ResetPassword" class="btn btn-primary mt-4">Redefinir Senha</a>

@@ -28,3 +28,12 @@
         Não tem uma conta? <a asp-page="/Register">Registre-se aqui</a>.
     </p>
 </div>
+
+@if (Model.LoginFailed)
+{
+    <div class="form-group text-center mt-3">
+        <p class="forgot-password-link">
+            Esqueceu sua senha? <a asp-page="/ForgotPassword">Redefinir senha</a>.
+        </p>
+    </div>
+}

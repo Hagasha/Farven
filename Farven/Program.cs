@@ -25,6 +25,8 @@ builder.Services.AddHttpContextAccessor();
 // Registra o ConversionService
 builder.Services.AddScoped<ConversionService>();
 
+builder.Services.AddScoped<EmailService>(); 
+
 // Adiciona suporte à autenticação baseada em cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
