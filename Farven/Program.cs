@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Adiciona os serviços ao contêiner.
 builder.Services.AddRazorPages();
-builder.Services.AddControllers(); // Certifique-se de que os controladores estão habilitados
+builder.Services.AddControllers(); 
 
 // Adiciona o DbContext à aplicação.
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -68,7 +68,7 @@ app.UseRouting();
 app.UseCors("AllowAll");
 
 // Habilita a autenticação e autorização.
-app.UseAuthentication(); // Deve vir antes de UseAuthorization
+app.UseAuthentication(); 
 app.UseAuthorization();
 
 // Mapeia as rotas dos controladores e páginas

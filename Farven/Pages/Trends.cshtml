@@ -1,0 +1,60 @@
+﻿@page
+@model Farven.Pages.TrendsModel
+@{
+    ViewData["Title"] = "Análise de Tendências";
+}
+
+<h2>Análise de Tendências</h2>
+
+<div>
+    <h4>Visão Geral</h4>
+    <p>Total de Conversões: <span id="totalConversions"></span></p>
+    <p>Valor Total Convertido: <span id="totalConvertedAmount"></span></p>
+    <p>Moeda Mais Convertida: <span id="mostConvertedCurrency"></span> (<span id="mostConvertedCurrencyCount"></span> conversões)</p>
+</div>
+
+<h4>Tendência de Conversões</h4>
+<canvas id="conversionsChart" width="400" height="200"></canvas>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Obter visão geral
+            $.get("/api/trends/overview", function (data) {
+                $("#totalConversions").text(data.totalConversions);
+                $("#totalConvertedAmount").text(data.totalConvertedAmount);
+                $("#mostConvertedCurrency").text(data.mostConvertedCurrency);
+                $("#mostConvertedCurrencyCount").text(data.mostConvertedCurrencyCount);
+            });
+
+            // Obter dados de conversão por data
+            $.get("/api/trends/conversions-by-date", function (data) {
+                var dates = data.map(function (d) { return d.date; });
+                var counts = data.map(function (d) { return d.count; });
+
+                var ctx = document.getElementById('conversionsChart').getContext('2d');
+                var conversionsChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Número de Conversões',
+                            data: counts,
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}
